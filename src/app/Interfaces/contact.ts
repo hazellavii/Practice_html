@@ -1,5 +1,6 @@
 export interface Contact {
     id: string,
+    /** Nombre del contracto */
     firstName: string,
     lastName: string,
     address: string,
@@ -7,9 +8,8 @@ export interface Contact {
     email: string,
     image: string,
     company: string,
-    isfavorite?: boolean //es opcional (?)
+    isFavorite: boolean 
 }
 
-
-
+/** Interfaz que es igual a Contact pero sin ID */
 export type NewContact=Omit<Contact, "id">; 

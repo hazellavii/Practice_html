@@ -47,4 +47,3 @@ deleteContact(id:string) {
 
   setFavourite() { }
 }
-    

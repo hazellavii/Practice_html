@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ContactListItem } from '../../component/contact-list-item/contact-list-item';
 import { Contact, NewContact } from '../../Interfaces/contact';
@@ -12,11 +12,13 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact-page.html',
   styleUrl: './contact-page.scss'
 })
-export class ContactPage {
+export class ContactPage implements OnInit {
+    ngOnInit(): void {
+      this.contactsService.getContacts();
+    }
 
     authService = inject(AuthService);
     contactsService = inject(ContactsService);
-firstName: any;
 
     createContact(form:any){
       const nuevoContacto: NewContact ={
@@ -27,12 +29,9 @@ firstName: any;
       image: form.image,
       number: form.number,
       company: form.company,
-      isfavorite: form.isfavorite
-
+      isFavorite: form.isfavorite
       }
 
       this.contactsService.createContact(nuevoContacto)
-
     }
-  
   }

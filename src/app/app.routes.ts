@@ -8,7 +8,6 @@ import { RegisterPage } from './pages/register-page/register-page';
 
 export const routes: Routes = [
     {
-        //Cuando la ruta diga "login" que me lleve a esta pagina
         path:"login",
         component: LoginPages
     },
@@ -34,4 +33,5 @@ export const routes: Routes = [
             },
         ]
     }, 
+
 ];
