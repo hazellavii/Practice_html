@@ -1,6 +1,6 @@
-import { inject, Injectable } from "@angular/core";
-import { loginData } from "../Interfaces/auth";
-import { Router } from "@angular/router";
+import { inject, Injectable } from '@angular/core';
+import { LoginData } from '../Interfaces/auth';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +9,8 @@ export class AuthService {
   router = inject(Router);
   token : null|string = localStorage.getItem("token");
 
-  /** Autentica al usario en el back y nos devuelve el token  */
-  async login(loginData: loginData){
+    /** Autentica al usuario en el back y nos devuelve el token */
+  async login(loginData: LoginData){
     const res = await fetch("https://agenda-api.somee.com/api/authentication/authenticate",
       {
         method: "POST",
@@ -25,11 +25,12 @@ export class AuthService {
     }
   }
 
-  /** Cierra sesion */
+  /** Cierra sesión */
   logout(){
     this.token = null;
-    this.router.navigate(["/login"])
+    localStorage.removeItem("token");
+    this.router.navigate(["/login"]);
   }
 }
 
-//
+// 

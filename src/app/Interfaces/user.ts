@@ -1,14 +1,14 @@
-export interface user {
-    id: string,
+export interface User {
+    id: number,
     /** Nombre del usuario */
     firstName: string,
-    /** apellido del usuario */
+    /** Apellido del usuario */
     lastName: string,
     /** Email del usuario */
     email: string,
     /** Contraseña del usuario */
-    password: string,
+    password: string
 }
 
 /** Interfaz que es igual a User pero sin ID */
-export type NewUser = Omit<user, "id"> 
+export type NewUser = Omit<User,"id">;

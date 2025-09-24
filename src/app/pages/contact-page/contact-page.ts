@@ -7,21 +7,21 @@ import { ContactsService } from '../../services/contact-service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-contact-page',
-  imports: [RouterModule, ContactListItem, FormsModule],
+  selector: 'app-contacts-page',
+  imports: [RouterModule,ContactListItem, FormsModule],
   templateUrl: './contact-page.html',
   styleUrl: './contact-page.scss'
 })
-export class ContactPage implements OnInit {
-    ngOnInit(): void {
-      this.contactsService.getContacts();
-    }
+export class ContactsPage implements OnInit {
+  ngOnInit(): void {
+    this.contactsService.getContacts();
+  }
 
-    authService = inject(AuthService);
-    contactsService = inject(ContactsService);
+  authService = inject(AuthService);
+  contactsService = inject(ContactsService);
 
-    createContact(form:any){
-      const nuevoContacto: NewContact ={
+  createContact(form:any){
+    const nuevoContacto: NewContact ={
       firstName: form.firstName,
       lastName: form.lastName,
       address: form.address,
@@ -29,9 +29,10 @@ export class ContactPage implements OnInit {
       image: form.image,
       number: form.number,
       company: form.company,
-      isFavorite: form.isfavorite
-      }
-
-      this.contactsService.createContact(nuevoContacto)
+      isFavorite: form.isFavorite
     }
+
+    this.contactsService.createContact(nuevoContacto)
   }
+}
+
