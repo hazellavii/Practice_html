@@ -12,10 +12,12 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact-page.html',
   styleUrl: './contact-page.scss'
 })
-export class ContactsPage implements OnInit {
+export class ContactsPage implements OnInit
+
+{
   ngOnInit(): void {
     this.contactsService.getContacts();
-  }
+    }
 
   authService = inject(AuthService);
   contactsService = inject(ContactsService);
@@ -29,10 +31,15 @@ export class ContactsPage implements OnInit {
       image: form.image,
       number: form.number,
       company: form.company,
-      isFavorite: form.isFavorite
+      isFavorite: form.isFavorite,
+      groups: undefined
     }
 
     this.contactsService.createContact(nuevoContacto)
   }
 }
+
+
+
+
 

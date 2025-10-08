@@ -92,7 +92,7 @@ export class ContactsService {
   }
 
   /** Marca/desmarca un contacto como favorito */
-  async setFavourite(id:string | number ) {
+  async setFavorite(id:string | number ) {
     const res = await fetch(this.URL_BASE+"/"+id+"favorite", 
       {
         method: "POST",

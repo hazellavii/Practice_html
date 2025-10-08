@@ -8,6 +8,7 @@ import { RegisterPage } from './pages/register-page/register-page';
 import { onlyPublicUserGuard } from './guards/only-public-user-guard';
 import { onlyLoggedUserGuard } from './guards/only-logged-user-guard';
 import { NewEditContact } from './pages/new-edit-contact/new-edit-contact';
+import { ContactsService } from './services/contact-service';
 
 export const routes: Routes = [
     {
@@ -20,7 +21,6 @@ export const routes: Routes = [
         component: RegisterPage,
         canActivate: [onlyPublicUserGuard]
     },
-
     {
         path: "",
         component: LoggedLayout,
@@ -29,6 +29,11 @@ export const routes: Routes = [
             {
                 path: "",
                 component: ContactsPage  
+            },
+            ///
+            {
+                path: 'contacts',
+                component: ContactsPage
             },
             {
                 path: "contacts/new",

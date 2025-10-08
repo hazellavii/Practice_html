@@ -1,4 +1,10 @@
 <!-- Toda la parte de nuevo contacto luego irá en una nueva pestaña o en una ventana emergente. A elección. -->
+<div class="header">
+  <button routerLink="/contacts" class="btn-back"> Volver</button>
+  <h3> Nuevo Contacto</h3>
+</div>
+
+
 <div id="container" class="card">
   @if(idContacto()){
     <h2>Editar contacto</h2>
@@ -41,6 +47,7 @@
      <label for="image">URL Imagen</label>
      <input id="image" name="image" type="text" ngModel minlength="10">
    </div>
+   <button [disabled]="newContactForm.invalid">+</button>
    @if (errorEnBack) {
        <p class="error">Error indeterminado, intente nuevamente.</p>
      } 
@@ -49,6 +56,5 @@
      } @else {
      <button [disabled]="newContactForm.invalid">Crear</button>
   }
- 
   </form>
   </div>

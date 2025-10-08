@@ -1,4 +1,5 @@
 export interface Contact {
+groups: any;
     id: string,
     /** Nombre del contacto */
     firstName: string,

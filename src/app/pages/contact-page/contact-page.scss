@@ -3,3 +3,46 @@
 .error{
     color: var(--color-error);
 }
+
+.header {
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(122, 122, 140);
+    color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+.h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.btn-new {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-new:hover {
+    background-color: rgb(122, 122, 140);
+}
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-bottom: 2px solid rgb(122, 122, 140);
+}
+

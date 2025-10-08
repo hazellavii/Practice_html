@@ -3,10 +3,11 @@ import { Form, FormsModule, NgForm } from '@angular/forms';
 import { ContactsService } from '../../services/contact-service';
 import { Router } from '@angular/router';
 import { Contact, NewContact } from '../../Interfaces/contact';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-new-edit-contact',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './new-edit-contact.html',
   styleUrl: './new-edit-contact.scss'
 })
@@ -47,7 +48,8 @@ export class NewEditContact implements OnInit {
       image: form.value.image,
       number: form.value.number,
       company: form.value.company,
-      isFavorite: form.value.isFavorite
+      isFavorite: form.value.isFavorite,
+      groups: undefined
     }
     let res;
     // const res = await this.contactsService.createContact(nuevoContacto);
@@ -61,7 +63,7 @@ export class NewEditContact implements OnInit {
       this.errorEnBack = true;
       return
     };
-    this.router.navigate(["/contacts",res.id]);
+    this.router.navigate(["/"]);
   }
 
 }
