@@ -5,7 +5,7 @@
     <span> {{contact().groups || '-' }}</span>
 
     <span class="actions">
-        <button (click)="contactsService.deleteContact(contact().id)"class="btn-delete">Borrar</button></span>
+        <button (click)="openDeleteModal()"class="btn-delete">Borrar</button></span>
         <button [routerLink]="['/contacts', contact().id, 'edit']" class="btn-edit">Editar</button>
     <span>
         @if (contact().isFavorite === true) {

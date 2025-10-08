@@ -4,7 +4,6 @@
   <h3> Nuevo Contacto</h3>
 </div>
 
-
 <div id="container" class="card">
   @if(idContacto()){
     <h2>Editar contacto</h2>
@@ -52,9 +51,13 @@
        <p class="error">Error indeterminado, intente nuevamente.</p>
      } 
      @if(idContacto()){
-       <button [disabled]="newContactForm.invalid">Editar</button>
+       <button [disabled]="newContactForm.invalid || isLoading">Editar</button>
      } @else {
-     <button [disabled]="newContactForm.invalid">Crear</button>
+     <button [disabled]="newContactForm.invalid || isLoading">Crear</button>
+  }
+  @if(isLoading){
+    <app-spinner></app-spinner>
   }
   </form>
   </div>
+  <app-spinner></app-spinner>

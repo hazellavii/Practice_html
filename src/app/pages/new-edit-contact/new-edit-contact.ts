@@ -4,10 +4,11 @@ import { ContactsService } from '../../services/contact-service';
 import { Router } from '@angular/router';
 import { Contact, NewContact } from '../../Interfaces/contact';
 import { RouterLink } from '@angular/router';
+import { Spinner } from "../../component/spinner/spinner";
 
 @Component({
   selector: 'app-new-edit-contact',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, Spinner],
   templateUrl: './new-edit-contact.html',
   styleUrl: './new-edit-contact.scss'
 })
@@ -18,6 +19,7 @@ export class NewEditContact implements OnInit {
    idContacto = input<number>();
   contactoOriginal:Contact|undefined = undefined;
    form = viewChild<NgForm>('newContactForm');
+isLoading: any;
   
   async ngOnInit() {
     if(this.idContacto()){
