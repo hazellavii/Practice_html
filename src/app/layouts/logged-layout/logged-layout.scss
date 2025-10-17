@@ -1,3 +1,105 @@
-div{
-    background-color: gray;
+
+
+/////
+
+/* Barra superior */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(122, 122, 140);
+    padding: 10px 20px;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    
+    z-index: 10;
+  }
+  
+  
+  /* Contenido de la izquierda */
+  .left-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+.logo{
+    width: auto;
+    height: 33px;
+    margin-right: -10px;
+  }
+
+  h1{
+    font-weight: 600;
+    font-size: 30px;
+  }
+  
+  /* Botón del menú (☰) */
+  .menu-btn {
+    font-size: 35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    margin-right: 50px;
+  }
+  
+  /* Menú lateral */
+  .side-menu {
+    position: fixed;
+    top: 60px;
+    right: -450px; /* escondido inicialmente */
+    width: 200px;
+    height: 100%;
+    background-color: #d3c0c0;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+  
+  /* Cuando se abre */
+  .side-menu.open {
+    right: 0;
+  }
+  
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-menu li {
+    margin-bottom: 15px;
+  }
+  
+  .side-menu a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .menu-option{
+    width: 100%;
+    background-color: transparent;
+  border: none;
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
 }
+
+.menu-option:hover {
+  background-color: #9d9b9b;
+}
+
+  
+  /* Espacio para que el contenido no quede debajo del header */
+  main {
+    padding-top: 70px;
+  }
+
+ 

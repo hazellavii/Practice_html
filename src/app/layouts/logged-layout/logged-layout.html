@@ -1,10 +1,36 @@
-<div>
+<!-- <div>
     <nav>
         <a routerLink="/">Contactos</a>
         <a routerLink="/groups">Grupos</a>
-        <button (click) = "openLogoutModal()"> Log Out </button>
+        <button (click) = "openLogoutModal()" class="btn.logout"> Log Out </button>
         
 
     </nav>
-</div>
-<router-outlet/>
+</div>-->
+
+<header class="topbar">
+    <div class="left-content">
+      <img src="/blackcontactologo.png" alt="logo" class="logo" />
+      <h1>Contactos</h1>
+    </div>
+    <button class="menu-btn" (click)="toggleMenu()">☰</button>
+  </header>
+  
+  <!-- Menú lateral -->
+  <nav class="side-menu" [class.open]="menuOpen">
+    <ul>
+      <li>
+        <button routerLink="/contacts/new" class="btn-new">+ Nuevo Contacto</button> 
+      </li>
+        <li>
+            <button (click) = "openLogoutModal()" class="btn.logout"> Log Out </button>
+        </li>    
+    </ul>
+  </nav>
+  
+  <!-- Contenido principal -->
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+
