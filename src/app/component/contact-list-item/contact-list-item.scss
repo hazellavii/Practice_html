@@ -20,22 +20,26 @@
 }
 
 .btn-edit{
-    border-radius: 4px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    background-color: rgb(122, 122, 140);
-    transition: background-color 0.3s; 
+  background-color: white;
+  color: black; 
+  border: none;
+padding: 6px 12px; 
+border-radius: 5px; 
+font-weight: bold; 
+cursor: pointer;
+transition: all 0.3s;
 }
+
 .btn-delete{
-        border-radius: 4px;
-        font-size: 15px;
-        cursor: pointer;
-        text-decoration: none;
-        color: white;
-        background-color: rgb(122, 122, 140);
-        transition: background-color 0.3s; 
+  background-color: white;
+  color: black; 
+  border: none;
+padding: 6px 12px; 
+border-radius: 5px; 
+font-weight: bold; 
+cursor: pointer;
+transition: all 0.3s;
+margin-right: 5px;  
 }
  
   .btn-delete:hover, 
